@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+        <form class = "grid" action = "/encoded" method ="POST">
+            <center>
+                {% if name %}
+                <h3 style= "color: blue; ">{{name}}</h3>
+                <img src="/static/QRCode.jpg">
+                {% endif %}
+            </center>
+
+            <label for = "Name"> Enter Data:</label>
+            <input type="text" name="name" id = "name">
+            <center><input type="Submit" class = "file_submit"></center>
+
+        </form>
+
+    </body>
+
+
+</html>
+{% endblock %}
