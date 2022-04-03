@@ -1,0 +1,3 @@
+qrcode.ccqrcode.ca {
+        reverse_proxy localhost:5000
+}
