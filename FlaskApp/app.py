@@ -15,9 +15,7 @@ def result():
     output = request.form.to_dict()
     name = output["name"]
     cv = request.form["color"]
-    ec = request.form["EC"]
-
-    
+    ec = request.form["EC"]    
 
     if ec == "L":
         qr = qrcode.QRCode(
@@ -55,16 +53,10 @@ def result():
 
     if cv == "Default":
         image = qr.make_image(fill_color="Black", back_color="White")
-        print('black')
-    elif cv == "Red":
-        image = qr.make_image(fill_color="Red", back_color="White")
-        print('red')
-    elif cv == "Green":
-        image = qr.make_image(fill_color="Green", back_color="White")
-        print('green')
-    elif cv == "Blue":
-        image = qr.make_image(fill_color="Blue", back_color="White")
-        print('blue')
+        print('Default')
+    elif cv == "Color":
+        image = qr.make_image(fill_color=request.form["picker"], back_color="White")
+        print("color picker:" + request.form["picker"])
     elif cv == "GS":
         image = qr.make_image(image_factory=StyledPilImage, module_drawer=GappedSquareModuleDrawer())
         print('GS')
