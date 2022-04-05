@@ -1,8 +1,33 @@
-{% extends 'layout.html' %} 
-
 {% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CCQRCode</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta property="og:site_name" content="CCQRCode" />
+    <meta property="og:title" content="CCQRCoder" />
+    <meta
+      property="og:description"
+      content="A simple QR Code Website"
+    />
+    <meta property="og:type" content="website" />
+    <link
+      href="{{ url_for('static', filename='style.css') }}"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+<body>
+        <div class="center">
+                <h1>CCQRCode</h1>
+                <p>Welcome to the one stop shop for QR Codes.</p>
+                <a href="{{ url_for('encoder') }}"><input class="button" style="background-color: cornflowerblue"  value="Encoder"></a>
+                <a href="{{ url_for('decoder') }}"><input class="button" style="background-color: crimson" value="Decoder"></a>
+        </div>
+</body>
+</html>
 
-<h1>QR Code Encoder/Decoder</h1>
-<p>Welcome to the one stop shop for QR Codes.</p>
 
 {% endblock %}

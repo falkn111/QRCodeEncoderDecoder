@@ -2,26 +2,19 @@
 
 {% block content %}
 
-<div class="container">
-  <div class="row">
-    <div class="col">
-
-      <h1>Upload an image</h1>
-      <hr>
+   <h1>Upload an image</h1>
+   <hr>
 
       <form action="/decoder" method="POST" enctype="multipart/form-data">
-          <label>Select image</label>
 
-            <input type="file" name="image" id="image">
-            <br>
-            
-        <button type="submit" class="btn btn-primary">Upload</button>
+        <label>Upload a QR Code: </label>
+        <input type="file" name="image" id="image">
+        <br><br>
+
+        <button style="background: crimson" class="submit">Upload</button>
+        <br>
         {% if link %}
         <h3>Your QR Code has the following Data: {{link}} </h3>
         {% endif %}
       </form>
-    </div>
-  </div>
-</div>
-
 {% endblock %}

@@ -1,27 +1,60 @@
 {% extends 'layout.html' %}
-
-{% block content %}
+{% block content%}
 <!doctype html>
 <html>
     <head>
-        <img src="/static/QRCode.jpg" width="300" height="300">
     </head>
 
     <body>
 
         <form class = "grid" action = "/encoded" method ="POST">
-            <center>
-                {% if name %}
-                <h3 style= "color: blue; ">{{name}}</h3>
-                {% endif %}
-            </center>
-
+            <h1>Create your QR Code</h1>
+            <hr>
             <label for = "Name"> Enter Data:</label>
             <input type="text" name="name" id = "name">
-            <center><input type="Submit" class = "file_submit"></center>
 
+            <br>
+
+            <p>Please select your style of choice:</p>
+            <label for="colorpicker">Color Picker:</label>
+            <input type="color" id="colorpicker" name="picker" value="#0000ff">
+
+            <br><br>
+
+            <input type="radio" id="default" name="color" value="Default" checked>
+            <label for="default">Default</label><br>
+
+            <input type="radio" id="color" name="color" value="Color">
+            <label for="color">Color</label><br>
+
+            <input type="radio" id="gs" name="color" value="GS">
+            <label for="gs">Gapped Square</label><br>
+            <input type="radio" id="c" name="color" value="C">
+            <label for="c">Circle</label><br>
+            <input type="radio" id="r" name="color" value="R">
+            <label for="r">Rounded</label><br>
+            <input type="radio" id="vb" name="color" value="VB">
+            <label for="vb">Vertical Bar</label><br>
+            <input type="radio" id="hb" name="color" value="HB">
+            <label for="hb">Horizontal Bar</label><br>
+
+            <br>
+
+            <p>Please select your error correction level:</p>
+            <input type="radio" id="l" name="EC" value="L">
+            <label for="l">L(7%)</label><br>
+            <input type="radio" id="m" name="EC" value="M" checked>
+            <label for="m">M(15% Default)</label><br>
+            <input type="radio" id="q" name="EC" value="Q">
+            <label for="q">Q(25%)</label><br>
+            <input type="radio" id="h" name="EC" value="H">
+            <label for="h">H(30%)</label><br><br>
+            <input style="background: cornflowerblue" class="submit" type="Submit">
+
+            <br><br>
+
+            <img src="/static/QRCode.jpg" width="300" height="300">
         </form>
-
     </body>
 
 
