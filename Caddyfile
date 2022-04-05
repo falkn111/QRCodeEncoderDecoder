@@ -1,3 +1,7 @@
+www.ccqrcode.ca {
+        reverse_proxy localhost:5000
+}
+
 qrcode.ccqrcode.ca {
         reverse_proxy localhost:5000
 }
